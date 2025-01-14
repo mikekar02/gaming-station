@@ -29,12 +29,85 @@
     box-sizing: border-box;
 }
 
+body 
+{
+    font-family: var(--ff-primary);
+    background: var(--clr-white);
+    color: var(--clr-grey-1);
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+
+a 
+{
+    text-decoration: none;
+}
+
+img 
+{
+    width: 100%;
+    display: block;
+}
+
+
 h1,
 h2,
 h3,
 h4
 {
     line-height: 1;
+}
+
+h1 
+{
+    font-size: 3rem;
+}
+h2 
+{
+    font-size: 2rem;
+}
+h3 
+{
+    font-size: 1.5rem;
+}
+h4 
+{
+    font-size: 0.875rem;
+}
+p 
+{
+    margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 800px) 
+{
+    h1 
+    {
+        font-size: 4rem;
+    }
+    h2 
+    {
+        font-size: 2.5rem;
+    }
+    h3 
+    {
+        font-size: 2rem;
+    }
+    h4 
+    {
+        font-size: 1rem;
+    }
+    body 
+    {
+        font-size: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4 
+    {
+        line-height: 1;
+    }
 }
 
 /* more global  */
@@ -51,7 +124,13 @@ h4
     font-size: 1rem;
     border: none;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover 
+{
+    /* color: var(--clr-primary-3); */
+    color: var(--clr-secondary);
+    background: var(--clr-primary-light);
 }
 
 .clearfix::after,
@@ -84,15 +163,38 @@ h4
 /* ==================================================================== */
 
 /* sliding animation */
-@property --theta
+
+@keyframes bounce 
 {
-    syntax: "<angle>";
-    initial-value: 0.05;
-    inherits: false;
+    0% 
+    {
+        transform: scale(1);
+    }
+    50% 
+    {
+        transform: scale(1.3);
+    }
+    100% 
+    {
+        transform: scale(1);
+    }
 }
-
-
-
+@keyframes show 
+{
+    0% 
+    {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 @keyframes slideFromRight
 {
     0% { transform: translate(990px, 0px); }
@@ -143,6 +245,9 @@ h4
     100% { transform: translate(0px, 0px); }
 }
 
+
+
+
 body 
 {
     font-family: var(--ff-primary);
@@ -170,6 +275,7 @@ img
     background: linear-gradient(rgba(45, 0, 0, 0.575), rgba(0, 0, 0, 0.575)),
     url('./images/header.jpg') center/cover no-repeat fixed;
     position: relative;
+    display: block;
     /* animation */
     overflow: hidden;
 }
@@ -186,14 +292,14 @@ img
     border: 5px solid var(--clr-secondary);
     border-radius: 10%;
     background-color: #27282980;
-
+    animation: FadeIn 2s linear 1;
 }
 
 .banner h2 
-{
+{ 
     font-family: var(--ff-secondary);
     color: var(--clr-primary-light);
-    animation: slideFromRight 2s cubic-bezier(0.38, 0.39, 1, 1) 1;
+    animation: slideFromRight 2s linear 1;
 }
 
 .banner h1 
@@ -221,7 +327,6 @@ span
     padding: 1rem 1.75rem;
     margin-top: 2rem;
     background: var(--clr-black);
-    animation: show 5s ease-out 1;
     background-color: var(--clr-primary-light);
     transition: var(--transition);
 }
@@ -232,7 +337,7 @@ span
     color: var(--clr-white);
     transition: color 0.5s ease;
     transition: var(--transition);
-    box-shadow: 0 2px var(--clr-primary);
+
 }
 .banner-btn::after
 {
@@ -426,28 +531,7 @@ span
 
 /* media */
 
-@media screen and (min-width: 800px) {
-    h1 
-    {
-        font-size: 4rem;
-    }
-    h2 
-    {
-        font-size: 2.5rem;
-    }
-    h3 
-    {
-        font-size: 2rem;
-    }
-    h4 
-    {
-        font-size: 1rem;
-    }
-    body 
-    {
-        font-size: 1rem;
-    }
-}
+
 @media screen and (min-width: 568px) 
 {
     .skill 

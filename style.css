@@ -49,7 +49,6 @@ img
     display: block;
 }
 
-
 h1,
 h2,
 h3,
@@ -129,8 +128,8 @@ p
 .btn:hover 
 {
     /* color: var(--clr-primary-3); */
-    color: var(--clr-secondary);
-    background: var(--clr-primary-light);
+    color: var(--clr-primary-3);
+    background: var(--clr-primary);
 }
 
 .clearfix::after,
@@ -245,8 +244,27 @@ p
     100% { transform: translate(0px, 0px); }
 }
 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
 
+    100% {
+        opacity: 1;
+    }
+}
 
+@keyframes animateBg 
+{
+    0% 
+    {
+        background-position: 0 0;
+    }
+    100% 
+    {
+        background-position: 100% 0;
+    }
+}
 
 body 
 {
@@ -282,8 +300,8 @@ img
 
 .banner
 {
-    padding: 10px;
-    padding-bottom: 50px;
+    padding: 1em;
+    padding-bottom: 3.2em;
     text-align: center;
     position: absolute;
     top: 50%;
@@ -292,7 +310,7 @@ img
     border: 5px solid var(--clr-secondary);
     border-radius: 10%;
     background-color: #27282980;
-    animation: FadeIn 2s linear 1;
+    animation: fadeInAnimation 2s ease-in;
 }
 
 .banner h2 
@@ -333,6 +351,7 @@ span
 
 .banner-btn:hover
 {
+    transform: scale(1.2);
     background: var(--clr-primary-3);
     color: var(--clr-white);
     transition: color 0.5s ease;
@@ -346,22 +365,50 @@ span
     transition: color 0.5s ease;
     transition: var(--transition);
     box-shadow: 0 2px var(--clr-primary);
+
 }
 
 /* divider */
 
 .content-divider
 {
+
+    animation: animateBg 2s infinite linear;
+    background-color: #fff;
+    background-image: linear-gradient(90deg, var(--clr-primary), var(--clr-primary-light), var(--clr-primary),var(--clr-primary-light));
+    background-size: 300% 100%;
+    box-shadow: 0 3px 14px #000;
+    border-radius: 1rem;
     height: 0.5rem;
-    background: linear-gradient(
-        to right,
-        var(--clr-primary),
-        var(--clr-primary-light),
-        var(--clr-primary)
-    );
+    width: 100%;
+
+
 }
 
 /* skills */
+@media screen and (min-width: 568px) 
+{
+    .skill 
+    {
+        float: left;
+        width: 50%;
+    }
+    .width100
+    {
+        float: left;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) 
+    {
+        .skill 
+        {
+            float: left;
+            width: 33.33%;
+        }
+    }
+
 
 .skills 
 {
@@ -409,6 +456,19 @@ span
 }
 
 /* about section */
+@media screen and (min-width: 992px) 
+{
+    .about-img,
+    .about-info 
+    {
+        float: left;
+        width: 50%;
+    }
+    .about-info 
+    {
+        padding-left: 2rem;
+    }
+}
 
 .about-section 
 {
@@ -419,6 +479,7 @@ span
 .about-info 
 {
     padding: 1.4rem 0;
+
 }
 
 .about-section .section-center 
@@ -428,19 +489,19 @@ span
 
 .about-picture-container 
 {
-    background: var(--clr-primary);
+    background: var(--clr-primary-3);
     border: 0.4rem solid var(--clr-primary);
     max-width: 30rem;
     border-radius: var(--radius);
     overflow: hidden;
 }
 
-.about-picture 
+.about-picture
 {
     transition: var(--transition);
 }
 
-.about-picture-container:hover .about-picture 
+.about-picture-container:hover .about-picture
 {
     transform: scale(1.2);
     opacity: 0.6;
@@ -458,6 +519,43 @@ span
 }
 
 /* products */
+@media screen and (min-width: 768px) 
+{
+    .product 
+    {
+        float: left;
+        width: 50%;
+        padding-right: 2rem;
+    }
+}
+
+@media screen and (min-width: 992px) 
+{
+    .product 
+    {
+        width: 33.33%;
+    }
+}
+
+@media screen and (min-width: 1200px) 
+{
+    .products-info 
+    {
+        float: left;
+        width: 30%;
+    }
+    .products-inventory 
+    {
+        float: left;
+        width: 70%;
+    }
+    .product 
+    {
+        margin-bottom: 0;
+        padding: 0 1rem;
+    }
+}
+
 .products 
 {
     background: var(--clr-primary-3);
@@ -529,74 +627,8 @@ span
 
 
 
-/* media */
 
 
-@media screen and (min-width: 568px) 
-{
-    .skill 
-    {
-        float: left;
-        width: 50%;
-    }
-}
 
-@media screen and (min-width: 768px) 
-{
-    .skill 
-    {
-        float: left;
-        width: 33.33%;
-    }
-}
 
-@media screen and (min-width: 992px) 
-{
-    .about-img,
-    .about-info 
-    {
-        float: left;
-        width: 50%;
-    }
-    .about-info 
-    {
-        padding-left: 2rem;
-    }
-}
 
-@media screen and (min-width: 768px) 
-{
-    .product 
-    {
-        float: left;
-        width: 50%;
-        padding-right: 2rem;
-    }
-}
-
-@media screen and (min-width: 992px) 
-{
-    .product 
-    {
-        width: 33.33%;
-    }
-}
-
-@media screen and (min-width: 1200px) 
-{
-    .products-info 
-    {
-        float: left;
-        width: 30%;
-    }
-    .products-inventory 
-    {
-        float: left;
-        width: 70%;
-    }
-    .product 
-    {
-        margin-bottom: 0;
-        padding: 0 1rem;
-    }
-}

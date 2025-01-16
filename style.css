@@ -407,7 +407,7 @@ span
 
 .skills 
 {
-    background: var(--clr-white);
+    background: linear-gradient(rgba(0, 0, 0, 0.575), rgba(0, 0, 0, 0.575));
 }
 
 .skill 
@@ -440,7 +440,7 @@ span
 .skill:hover 
 {
     background: var(--clr-primary-3);
-    box-shadow: 0 2px var(--clr-primary);
+    box-shadow: 0 2px var(--clr-secondary);
 }
 
 .skill:hover .skill-icon 
@@ -586,7 +586,6 @@ span
 .product:hover .product-img 
 {
     transform: scale(0.95);
-    /* opacity: 0.6;    */
     -webkit-box-shadow:0px 0px 43px 1px rgba(0, 0, 0, 0.9);
     -moz-box-shadow: 0px 0px 43px 1px rgba(0, 0, 0, 0.9);
     box-shadow: 0px 0px 43px 1px rgba(0, 0, 0, 0.9);
@@ -606,10 +605,14 @@ span
 
 /* services */
 
+.services
+{
+    background: linear-gradient(rgba(0, 0, 0, 0.575), rgba(0, 0, 0, 0.575));
+}
 
 .services-title 
 {
-    margin-top: 4rem;
+    padding-top: 4rem;
     margin-bottom: -4rem;
     text-align: center;
 }

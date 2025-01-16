@@ -356,8 +356,8 @@ span
     color: var(--clr-white);
     transition: color 0.5s ease;
     transition: var(--transition);
-
 }
+
 .banner-btn::after
 {
     background: var(--clr-primary-3);
@@ -365,14 +365,12 @@ span
     transition: color 0.5s ease;
     transition: var(--transition);
     box-shadow: 0 2px var(--clr-primary);
-
 }
 
 /* divider */
 
 .content-divider
 {
-
     animation: animateBg 2s infinite linear;
     background-color: #fff;
     background-image: linear-gradient(90deg, var(--clr-primary), var(--clr-primary-light), var(--clr-primary),var(--clr-primary-light));
@@ -381,8 +379,6 @@ span
     border-radius: 1rem;
     height: 0.5rem;
     width: 100%;
-
-
 }
 
 /* skills */
@@ -401,14 +397,13 @@ span
 }
 
 @media screen and (min-width: 768px) 
+{
+    .skill 
     {
-        .skill 
-        {
-            float: left;
-            width: 33.33%;
-        }
+        float: left;
+        width: 33.33%;
     }
-
+}
 
 .skills 
 {
@@ -492,7 +487,7 @@ span
     background: var(--clr-primary-3);
     border: 0.4rem solid var(--clr-primary);
     max-width: 30rem;
-    border-radius: var(--radius);
+    border-radius: 1rem;
     overflow: hidden;
 }
 
@@ -504,7 +499,7 @@ span
 .about-picture-container:hover .about-picture
 {
     transform: scale(1.2);
-    opacity: 0.6;
+    opacity: 0.6;   
     object-fit: contain;
 }
 
@@ -577,7 +572,7 @@ span
 
 .product 
 {
-    margin-bottom: 1.6rem;
+    overflow: hidden;
 }
 
 .product-img 
@@ -586,6 +581,13 @@ span
     margin-bottom: 2rem;
     height: 17rem;
     object-fit: cover;
+    transition: var(--transition);
+}
+.product:hover .product-img 
+{
+    transform: scale(0.95);
+    opacity: 0.6;   
+
 }
 
 .product-price 
